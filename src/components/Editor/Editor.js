@@ -7,7 +7,9 @@ export default function Editor({ title,
   subtitle,
   setSubtitle,
   font,
-  setFont
+  setFont,
+  alignment,
+  setAlignment
 }) {
   return (
     <div className="editor">
@@ -40,17 +42,23 @@ export default function Editor({ title,
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" >
           <label>
-            <input name="align" type="radio" value="left" />
+            <input name="align" type="radio" value="left" checked={alignment === 'left'} onChange={(e) => {
+              setAlignment(e.target.value);
+            }} />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="center" />
+            <input name="align" type="radio" value="center" checked={alignment === 'center'} onChange={(e) => {
+              setAlignment(e.target.value);
+            }} />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" />
+            <input name="align" type="radio" value="right" checked={alignment === 'right'} onChange={(e) => {
+              setAlignment(e.target.value);
+            }}/>
             <i className="ri-align-right"></i>
           </label>
         </div>

@@ -11,13 +11,15 @@ export default function Home() {
   const [subtitle, setSubtitle] = useState('');
   const [font, setFont] = useState('architect');
   const [alignment, setAlignment] = useState('left');
+  const [text, setText] = useState('');
   return (
     <main>
       {/* pass the state variables as props to the presentational components */}
       <Preview title={title}
         subtitle={subtitle}
         font={font}
-        alignment={alignment}/>
+        alignment={alignment}
+        text={text}/>
       <Editor title={title}
         setTitle={setTitle}
         subtitle={subtitle}
@@ -25,7 +27,9 @@ export default function Home() {
         font={font}
         setFont={setFont}
         alignment={alignment}
-        setAlignment={setAlignment}/>
+        setAlignment={setAlignment}
+        text={text}
+        setText={setText}/>
     </main>
   );
 }
